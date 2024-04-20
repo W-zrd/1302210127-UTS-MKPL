@@ -3,6 +3,7 @@ package lib.employee;
 import java.time.LocalDate;
 
 import lib.tax.MaritalStatus;
+import lib.tax.TaxCalculationData;
 import lib.tax.TaxFunction;
 
 public class Employee {
@@ -69,6 +70,8 @@ public class Employee {
         }
     
         MaritalStatus maritalStatus = familyData.getSpouseIdNumber() == null ? MaritalStatus.SINGLE : MaritalStatus.MARRIED;
-        return TaxFunction.calculateTax(monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible, maritalStatus, familyData.getChildIdNumbers().size());
+    
+        TaxCalculationData taxCalculationData = new TaxCalculationData(monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible, maritalStatus, familyData.getChildIdNumbers().size());
+        return TaxFunction.calculateTax(taxCalculationData);
     }
 }
