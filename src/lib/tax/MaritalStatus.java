@@ -1,4 +1,4 @@
-package lib;
+package lib.tax;
 
 public enum MaritalStatus {
     SINGLE,
