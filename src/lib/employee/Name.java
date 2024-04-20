@@ -1,4 +1,4 @@
-package lib;
+package lib.employee;
 
 public class Name {
     private String firstName;

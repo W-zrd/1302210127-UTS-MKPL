@@ -1,4 +1,4 @@
-package lib;
+package lib.employee;
 
 public class IdNumber {
     private String idNumber;
